@@ -15,8 +15,8 @@ export default function Login() {
       </div>
       <div className={styles.centerContainer}>
         <div className={styles.boxCenterContainers}>
-          <div>img</div>
-          <div className={styles.rightBox}>Right</div>
+          <div className={styles.leftBox}></div>
+          <div className={styles.rightBox}></div>
         </div>
       </div>
       <div className={styles.imageBottomContainer}>
