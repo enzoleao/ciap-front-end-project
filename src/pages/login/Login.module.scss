@@ -1,0 +1,46 @@
+.login {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    color: var(--blue-200);
+    min-width: 360;
+    min-height: 800;
+}
+.topRightImageFrame {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.centerContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .boxCenterContainers {
+        display: flex;
+        justify-content: space-between;
+        width: 78.19%;
+        height: 61.33%;
+        max-width: 70rem;
+        background: linear-gradient(223.72deg, #F6C93F -32.25%, rgba(233, 197, 93, 0) -32.25%, rgba(255, 204, 41, 0) -32.23%, #B3B3DD -10.31%, rgba(51, 52, 104, 0.94) 55.94%);
+        box-shadow: inset 3px 8px 87px 3px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        min-width: 30rem;
+        
+        .rightBox {        
+            width: 49.56%;
+            max-width: 34.875rem;
+            background: #EAEAF4;
+            border-radius: 25px;       
+        }
+       
+    }
+}
+
+.bottomLeftImageFrame {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
