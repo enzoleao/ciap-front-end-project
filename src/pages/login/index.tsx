@@ -6,6 +6,7 @@ import topImageFrameMobile from '../../../public/imagers/topImageFrameMobile.png
 import bottomImageFrameMobile from '../../../public/imagers/bottomImageFrameMobile.png'
 import { BiLockAlt } from 'react-icons/bi'
 import { MdOutlineMailOutline } from 'react-icons/md'
+import Link from 'next/link'
 
 export default function Login() {
   return (
@@ -43,7 +44,7 @@ export default function Login() {
 
               </div>
               <div>
-                  <a href="">Esqueci minha senha</a>
+                  <Link className={styles.ForgetLink} href="">Esqueci minha senha</Link>
               </div>
             </div>
             
