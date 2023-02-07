@@ -4,9 +4,6 @@ import topRightImageFrame from '../../../public/imagers/topRightImageFrame.png'
 import bottomLeftImageFrame from '../../../public/imagers/bottomLeftImageFrame.png'
 import topImageFrameMobile from '../../../public/imagers/topImageFrameMobile.png'
 import bottomImageFrameMobile from '../../../public/imagers/bottomImageFrameMobile.png'
-import { BiLockAlt } from 'react-icons/bi'
-import { MdOutlineMailOutline } from 'react-icons/md'
-import Link from 'next/link'
 
 export default function Login() {
   return (
@@ -41,13 +38,11 @@ export default function Login() {
                 placeholder={`Senha:`}
               />
               <div>
-
-              </div>
-              <div>
-                  <Link className={styles.ForgetLink} href="">Esqueci minha senha</Link>
+                <a className={styles.ForgetLink} href="">
+                  Esqueci minha senha
+                </a>
               </div>
             </div>
-            
           </div>
         </div>
         <div className={styles.bottomContainerImages}>
