@@ -32,23 +32,23 @@ export default function Login() {
                 className={styles.usersInputBox}
                 placeholder="Email:"
               />
-              <span className={styles.i}>
-                <MdOutlineMailOutline width={15} height={19} />
-              </span>
             </div>
             <div className={styles.inputStylesBoxs}>
               <input
-                type="text"
+                type="password"
                 className={styles.usersInputBox}
                 placeholder={`Senha:`}
               />
-              <span className={styles.i}>
-                <BiLockAlt width={15} height={19} />
-              </span>
+              <div>
+
+              </div>
+              <div>
+                  <a href="">Esqueci minha senha</a>
+              </div>
             </div>
+            
           </div>
         </div>
-
         <div className={styles.bottomContainerImages}>
           <Image
             className={styles.bottomLeftImageFrame}
