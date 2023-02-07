@@ -37,5 +37,7 @@
 }
 
 * body, html {
+    min-width: 400px;
+    min-height: 800px;
     background: var(--blue-300);
 }
