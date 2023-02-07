@@ -50,17 +50,46 @@
         justify-content: space-between;
         width: 78.19%;
         height: 61.33%;
-        max-width: 70rem;
+        ///max-width: 70rem;
+        z-index: 1;
         background: linear-gradient(223.72deg, #F6C93F -32.25%, rgba(233, 197, 93, 0) -32.25%, rgba(255, 204, 41, 0) -32.23%, #B3B3DD -10.31%, rgba(51, 52, 104, 0.94) 55.94%);
         box-shadow: inset 3px 8px 87px 3px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
         
         .rightBox {        
             width: 49.56%;
-            max-width: 34.875rem;
+            ///max-width: 34.875rem;
+            display: flex;
+            flex-direction: column;
+            gap: 27px;
+            justify-content: center;
+            align-items: center;
             background-color: #EAEAF4;
             border-radius: 25px;   
-            z-index: 1;    
+            z-index: 1; 
+
+            .usersInputBox {
+                background:#44469F;
+                border: none;
+                width: 357px;
+                height: 65px;
+                border-radius: 33px;
+                color: #fff;
+                font-family: 'Rubik';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+            &::placeholder {
+                    padding-left: 45px;
+                    color: #fff;
+                    font-family: 'Rubik';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+            }   
         }
         @media(max-width:800px){               
             .rightBox {
@@ -70,6 +99,8 @@
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 min-width: 296px;
                 background-color: #EAEAF4;
+                
+            
             }
             .leftBox {
                 display: none;
@@ -95,4 +126,14 @@
     bottom:0;
     left: 0;
     width: 100%;
+}
+.inputStylesBoxs {
+    position: relative;
+    color: #fff; 
+    span {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        padding: 16px 20px;
+    }
 }
