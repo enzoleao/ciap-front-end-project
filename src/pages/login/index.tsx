@@ -43,6 +43,9 @@ export default function Login() {
                 </a>
               </div>
             </div>
+            <div className={styles.buttonContainer}>
+              <button className={styles.buttonLogin}>ENTRAR</button>
+            </div>
           </div>
         </div>
         <div className={styles.bottomContainerImages}>

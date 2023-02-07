@@ -94,7 +94,30 @@
             @media (max-width: 800px) {
                 height: 44px;
             }
-            }   
+        }   
+        .buttonContainer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            .buttonLogin {
+                background:#EAEAF4;
+                border: none;
+                width: 63.76%;
+                max-width: 357px;
+                min-width: 358px;
+                height: 63px;
+                border-radius: 33px;
+                color: #2E3094;
+                border-radius: 25px;
+                font-family: 'Rubik',sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                border: 2px solid #2E3094;
+                
+                
+            }
+        }
         }
         @media(max-width:800px){               
             .rightBox {
