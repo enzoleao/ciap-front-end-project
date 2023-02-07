@@ -7,7 +7,7 @@ import bottomImageFrameMobile from '../../../public/imagers/bottomImageFrameMobi
 export default function Login() {
   return (
     <div className={styles.login}>
-      <div className={styles.imageTopContainer}>
+      <div>
         <Image
           className={styles.topRightImageFrame}
           src={topRightImageFrame}
@@ -24,18 +24,18 @@ export default function Login() {
           <div className={styles.leftBox}></div>
           <div className={styles.rightBox}></div>
         </div>
-      </div>
-      <div className={styles.imageBottomContainer}>
-        <Image
-          className={styles.bottomLeftImageFrame}
-          src={bottomLeftImageFrame}
-          alt={'bottom-left-image-frame'}
-        />
-        <Image
-          className={styles.bottomImageFrameMobile}
-          src={bottomImageFrameMobile}
-          alt={'top-right-image-frame'}
-        />
+        <div className={styles.bottomContainerImages}>
+          <Image
+            className={styles.bottomLeftImageFrame}
+            src={bottomLeftImageFrame}
+            alt={'bottom-left-image-frame'}
+          />
+          <Image
+            className={styles.bottomImageFrameMobile}
+            src={bottomImageFrameMobile}
+            alt={'top-right-image-frame'}
+          />
+        </div>
       </div>
     </div>
   )
