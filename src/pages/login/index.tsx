@@ -70,7 +70,6 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <div className={styles.teste2}>Ola</div>
       </div>
       <div className={styles.bottomContainerImages}>
         <Image
