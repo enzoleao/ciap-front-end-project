@@ -71,8 +71,12 @@ export default function Login() {
           </div>
         </div>
         <div className={styles.ciapNameFooter}>
-          <span className={styles.firstNameFooter}>SISTEMA DE GESTÃO DE PRONTUÁRIOS - CIAP</span>
-          <span className={styles.secondNameFooter}>CENTRO INTEGRADO DE ATENÇÃO PSICOSSOCIAL </span>
+          <span className={styles.firstNameFooter}>
+            SISTEMA DE GESTÃO DE PRONTUÁRIOS - CIAP
+          </span>
+          <span className={styles.secondNameFooter}>
+            CENTRO INTEGRADO DE ATENÇÃO PSICOSSOCIAL
+          </span>
         </div>
       </div>
       <div className={styles.bottomContainerImages}>
