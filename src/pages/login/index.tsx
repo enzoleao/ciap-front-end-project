@@ -12,7 +12,7 @@ export default function Login() {
   const [colorIcon2, setColorIcon2] = useState('#DFDFEE')
   return (
     <div className={styles.login}>
-      <div>
+      <div className={styles.topContainerImages}>
         <Image
           className={styles.topRightImageFrame}
           src={topRightImageFrame}
