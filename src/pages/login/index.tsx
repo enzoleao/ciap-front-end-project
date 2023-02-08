@@ -61,7 +61,7 @@ export default function Login() {
               </div>
             </div>
             <div className={styles.containerForgetLink}>
-              <a className={styles.ForgetLink} href="">
+              <a className={styles.ForgetLink} href="#">
                 Esqueci minha senha
               </a>
             </div>
@@ -69,6 +69,10 @@ export default function Login() {
               <button className={styles.buttonLogin}>ENTRAR</button>
             </div>
           </div>
+        </div>
+        <div className={styles.ciapNameFooter}>
+          <span className={styles.firstNameFooter}>SISTEMA DE GESTÃO DE PRONTUÁRIOS - CIAP</span>
+          <span className={styles.secondNameFooter}>CENTRO INTEGRADO DE ATENÇÃO PSICOSSOCIAL </span>
         </div>
       </div>
       <div className={styles.bottomContainerImages}>
