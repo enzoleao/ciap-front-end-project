@@ -70,18 +70,19 @@ export default function Login() {
             </div>
           </div>
         </div>
-        <div className={styles.bottomContainerImages}>
-          <Image
-            className={styles.bottomLeftImageFrame}
-            src={bottomLeftImageFrame}
-            alt={'bottom-left-image-frame'}
-          />
-          <Image
-            className={styles.bottomImageFrameMobile}
-            src={bottomImageFrameMobile}
-            alt={'top-right-image-frame'}
-          />
-        </div>
+        <div className={styles.teste2}>Ola</div>
+      </div>
+      <div className={styles.bottomContainerImages}>
+        <Image
+          className={styles.bottomLeftImageFrame}
+          src={bottomLeftImageFrame}
+          alt={'bottom-left-image-frame'}
+        />
+        <Image
+          className={styles.bottomImageFrameMobile}
+          src={bottomImageFrameMobile}
+          alt={'top-right-image-frame'}
+        />
       </div>
     </div>
   )
