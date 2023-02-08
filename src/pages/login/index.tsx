@@ -4,8 +4,12 @@ import topRightImageFrame from '../../../public/imagers/topRightImageFrame.png'
 import bottomLeftImageFrame from '../../../public/imagers/bottomLeftImageFrame.png'
 import topImageFrameMobile from '../../../public/imagers/topImageFrameMobile.png'
 import bottomImageFrameMobile from '../../../public/imagers/bottomImageFrameMobile.png'
-
+import { MdOutlineMailOutline } from 'react-icons/md'
+import { BiLockAlt } from 'react-icons/Bi'
+import { useState } from 'react'
 export default function Login() {
+  const [colorIcon, setColorIcon] = useState('#DFDFEE')
+  const [colorIcon2, setColorIcon2] = useState('#DFDFEE')
   return (
     <div className={styles.login}>
       <div>
@@ -24,24 +28,42 @@ export default function Login() {
         <div className={styles.boxCenterContainers}>
           <div className={styles.leftBox}></div>
           <div className={styles.rightBox}>
-            <div className={styles.inputStylesBoxs}>
-              <input
-                type="text"
-                className={styles.usersInputBox}
-                placeholder="Email:"
-              />
-            </div>
-            <div className={styles.inputStylesBoxs}>
-              <input
-                type="password"
-                className={styles.usersInputBox}
-                placeholder={`Senha:`}
-              />
-              <div>
-                <a className={styles.ForgetLink} href="">
-                  Esqueci minha senha
-                </a>
+            <div className={styles.boxInputsAll}>
+              <div className={styles.inputStylesBoxs}>
+                <MdOutlineMailOutline
+                  className={styles.inputIcons}
+                  color={colorIcon2}
+                  width={20}
+                  height={16}
+                />
+                <input
+                  onFocus={() => setColorIcon2('#2E3094')}
+                  onBlur={() => setColorIcon2('#DFDFEE')}
+                  type="text"
+                  className={styles.usersInputBox}
+                  placeholder="Email:"
+                />
               </div>
+              <div className={styles.inputStylesBoxs}>
+                <BiLockAlt
+                  className={styles.inputIcons}
+                  color={colorIcon}
+                  width={20}
+                  height={16}
+                />
+                <input
+                  onFocus={() => setColorIcon('#2E3094')}
+                  onBlur={() => setColorIcon('#DFDFEE')}
+                  type="password"
+                  className={styles.usersInputBox}
+                  placeholder={`Senha:`}
+                />
+              </div>
+            </div>
+            <div>
+              <a className={styles.ForgetLink} href="">
+                Esqueci minha senha
+              </a>
             </div>
             <div className={styles.buttonContainer}>
               <button className={styles.buttonLogin}>ENTRAR</button>
