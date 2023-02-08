@@ -5,7 +5,7 @@ import bottomLeftImageFrame from '../../../public/imagers/bottomLeftImageFrame.p
 import topImageFrameMobile from '../../../public/imagers/topImageFrameMobile.png'
 import bottomImageFrameMobile from '../../../public/imagers/bottomImageFrameMobile.png'
 import { MdOutlineMailOutline } from 'react-icons/md'
-import { BiLockAlt } from 'react-icons/Bi'
+import { BiLockAlt } from 'react-icons/bi'
 import { useState } from 'react'
 export default function Login() {
   const [colorIcon, setColorIcon] = useState('#DFDFEE')
@@ -60,7 +60,7 @@ export default function Login() {
                 />
               </div>
             </div>
-            <div>
+            <div className={styles.containerForgetLink}>
               <a className={styles.ForgetLink} href="">
                 Esqueci minha senha
               </a>
