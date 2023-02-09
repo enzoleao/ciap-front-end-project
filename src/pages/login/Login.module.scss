@@ -61,7 +61,7 @@
             ///max-width: 34.875rem;
             display: flex;
             flex-direction: column;
-            gap: 27px;
+            gap: 15px;
             justify-content: center;
             align-items: center;
             background-color: #EAEAF4;
@@ -221,17 +221,22 @@
                 
             }
         }
+        
         .containerForgetLink {
             width: 100%;
             max-width: 400px;
             display: flex;
             justify-content: flex-end;
+            height: 40px;
             margin-right: 7rem;
-            margin-top: 6px;
-
+            
             @media (max-width:800px){
                 margin-right: 0;
                 margin-left: 100px;
                 justify-content: center;
             }
+        }
+        .ForgetLink:active {
+            color: #2E3094;
+            margin-bottom:20px;
         }
