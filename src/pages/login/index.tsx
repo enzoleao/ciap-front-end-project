@@ -4,9 +4,12 @@ import topRightImageFrame from '../../../public/imagers/topRightImageFrame.png'
 import bottomLeftImageFrame from '../../../public/imagers/bottomLeftImageFrame.png'
 import topImageFrameMobile from '../../../public/imagers/topImageFrameMobile.png'
 import bottomImageFrameMobile from '../../../public/imagers/bottomImageFrameMobile.png'
+import brasaoCiap from '../../../public/imagers/brasao_ciap.webp'
+import brasaoPmpa from '../../../public/imagers/brasao_pmpa.webp'
 import { MdOutlineMailOutline } from 'react-icons/md'
 import { BiLockAlt } from 'react-icons/bi'
 import { useState } from 'react'
+
 export default function Login() {
   const [colorIcon, setColorIcon] = useState('#DFDFEE')
   const [colorIcon2, setColorIcon2] = useState('#DFDFEE')
@@ -67,6 +70,16 @@ export default function Login() {
             </div>
             <div className={styles.buttonContainer}>
               <button className={styles.buttonLogin}>ENTRAR</button>
+            </div>
+            <div className={styles.brasaoBoxers}>
+              <div>
+                <hr />
+                <Image src={brasaoCiap} alt="brasaoCiap" />
+              </div>
+              <div>
+                <hr />
+                <Image src={brasaoPmpa} alt="brasaoPmpa" />
+              </div>
             </div>
           </div>
         </div>

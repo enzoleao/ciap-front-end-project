@@ -289,3 +289,24 @@
                 position: relative;
             }
         }
+        .brasaoBoxers {
+            padding-top: 22px;
+            display: flex;
+            flex-direction: row;
+            gap:5rem;
+            @media (max-width:800px){
+                gap: 1rem;
+            }
+            div {
+                display: flex;
+                flex-direction: column;
+                gap:1.5rem;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                hr {
+                    width: 8rem;
+                    border: 1px solid #BEBFDE;
+                }
+            }
+        }
