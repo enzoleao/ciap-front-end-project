@@ -70,9 +70,6 @@
             background-color: #EAEAF4;
             border-radius: 25px;   
             z-index: 1;
-            @media (max-width:800px) {
-                gap: 0.875rem;
-            }
             .boxInputsAll {
                 width: 100%;
             }
@@ -125,6 +122,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
+
             .buttonLogin {
                 background:#EAEAF4;
                 border: none;
@@ -204,7 +202,7 @@
     align-items: center;
     position: relative;
     color: #fff;
-    gap: 0.550rem;
+    gap: 0.450rem;
 
         .inputIcons {
             position: relative;
@@ -243,6 +241,7 @@
             margin-right: 7rem;
             
             @media (max-width:800px){
+                height: 18px;
                 margin-right: 0;
                 margin-left: 100px;
                 justify-content: center;
