@@ -1,0 +1,74 @@
+.wrapper {
+    display: flex;
+
+    .container {
+        max-width: 1280px;
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0 auto;
+
+
+        .loginContainer {
+            width: 100%;
+            height: 39.25rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .avatarSection {
+                width: 38.75rem;
+                height: 39.25rem;
+
+                border-radius: 1rem;
+
+                background: linear-gradient(223.72deg, #F6C93F -32.25%, rgba(233, 197, 93, 0) -32.25%, rgba(255, 204, 41, 0) -32.23%, #B3B3DD -10.31%, rgba(51, 52, 104, 0.94) 55.94%);
+            }
+
+            .formSection {
+                width: 34.875rem;
+                height: 39.25rem;
+                background: #FFFFFF;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                border-radius: 1rem;
+
+                position: relative;
+                left: -30px;
+
+                .inputBox {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+
+            }
+
+        }
+
+        .systemTitle {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-right: 20rem;
+            justify-content: center;
+            max-width: calc(39.25rem + 34.875rem);
+            width: 100%;
+
+            gap: 0.4rem;
+
+            margin-top: 1rem;
+        }
+    }
+
+}

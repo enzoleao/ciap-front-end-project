@@ -1,0 +1,5 @@
+* Sugestão de complementação do global.css
+* Sugestão de complementação do _document
+
+* Análise da página Login
+- [] Adotar padrão wrapper, container
