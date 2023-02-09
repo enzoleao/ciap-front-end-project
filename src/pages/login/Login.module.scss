@@ -1,5 +1,7 @@
 .login {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     position: relative;
     color: var(--blue-200);
@@ -42,6 +44,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     
@@ -137,13 +140,16 @@
                 border: 2px solid #2E3094;
                 cursor: pointer;
                 transition: 0.2s background;
+
                 &:hover {
                     background: #BEBFDE;
                     font-weight: 600;
                     border: none;
                 }
+
                 @media (max-width:800px){
-                    height: 44px;
+                    height: 46px;
+                    width: 283px;
                 }
                 
             }
@@ -176,9 +182,15 @@
         }  
     }
 }
+.topContainerImages {
+    top: 0;
+    position: fixed;
+    right: 0;
+    width: 100%;
+}
 .bottomContainerImages {
-    position: absolute;
-    bottom:0;
+    bottom: 0;
+    position: fixed;
     left: 0;
     width: 100%;
 }
@@ -236,7 +248,45 @@
                 justify-content: center;
             }
         }
-        .ForgetLink:active {
+        .ForgetLink:active,  .ForgetLink:visited{
             color: #2E3094;
-            margin-bottom:20px;
+        }
+        .teste2 {
+            background-color: red;
+        }
+        .ciapNameFooter {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: self-end;
+            justify-content: flex-end;
+            max-width: 1450px;
+
+            @media (max-width:800px){
+                display: none;
+            }
+            .firstNameFooter {
+                color: #44469F;
+                font-family: 'Rubik';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                bottom: -40px;
+                margin-right: 13rem;
+                position: relative;
+            }
+            .secondNameFooter {
+                color: #2E3094;
+                font-family: 'Rubik';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24px;
+                bottom: -40px;
+                padding-left: 10px;
+                margin-top: 10px;
+                margin-right: 12.7rem;
+                position: relative;
+            }
         }
