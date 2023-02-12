@@ -22,7 +22,7 @@ Projeto para registro de prontuarios
 
 <h5>Páginas</h5>
 
-- [ ] Página de Login
+- [x] Página de Login
 - [ ] Dashboard
 
 <h5>Componentes</h5>
