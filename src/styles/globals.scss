@@ -2,41 +2,86 @@
     margin: 0;
     padding: 0;
     padding: border-box;
-}
-
-:root {
-
-      /* --- TONS DE LARANJA --- */
-
-    --orange-100:#fffaea; 
-    --orange-200:#fff7df;
-    --orange-300:#ffefbd; 
-    --orange-400:#ffcc29; 
-    --orange-500:#e6b825; 
-    --orange-600:#cca321; 
-    --orange-700:#bf991f; 
-    --orange-800:#997a19; 
-    --orange-900:#735c12; 
-    --orange-1000:#59470e; 
-    
+  }
+  
+  :root {
+  
+    //white??
+  
+    --white: #FFFFFF;
+  
+    /* --- TONS DE LARANJA --- */
+  
+    --orange-100: #fffaea;
+    --orange-200: #fff7df;
+    --orange-300: #ffefbd;
+    --orange-400: #ffcc29;
+    --orange-500: #e6b825;
+    --orange-600: #cca321;
+    --orange-700: #bf991f;
+    --orange-800: #997a19;
+    --orange-900: #735c12;
+    --orange-1000: #59470e;
+  
     /* --- TONS DE AZUL --- */
-    
-    --blue-100:#eaeaf4;
-    --blue-200:#e0e0ef;
-    --blue-300:#bebfde;
-    --blue-400:#2e3094;
-    --blue-500:#292b85;
-    --blue-600:#252676;
-    --blue-700:#23246f;
-    --blue-800:#1c1d59;
-    --blue-900:#151643;
-    --blue-1000:#101134;
-
+  
+    --blue-100: #eaeaf4;
+    --blue-200: #e0e0ef;
+    --blue-300: #bebfde;
+    --blue-400: #2e3094;
+    --blue-500: #292b85;
+    --blue-600: #252676;
+    --blue-700: #23246f;
+    --blue-800: #1c1d59;
+    --blue-900: #151643;
+    --blue-1000: #101134;
+  
     /* --- FONT FAMILY --- */
     --fontFamily: 'Rubik', sans-serif;
-}
-
-* body, html {
+  }
+  
+  /* tamanho de iped */
+  @media (max-width: 1080px) {
+    html {
+      font-size: 93.75%;
+    }
+  }
+  
+  /* tamanho mobile */
+  @media (max-width: 720px) {
+    html {
+      font-size: 87.5%;
+    }
+  }
+  
+  body {
+    background: var(--blue-300);
+    color: var(--secondary);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  * body,
+  html {
     min-width: 420px;
     background: var(--blue-300);
+  }
+  
+  body,
+  input,
+  textarea,
+  button {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+button {
+    cursor: pointer;
+  }
+  
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
 }

@@ -1,109 +1,115 @@
-import styles from './Login.module.scss'
 import Image from 'next/image'
-import topRightImageFrame from '../../../public/imagers/topRightImageFrame.png'
-import bottomLeftImageFrame from '../../../public/imagers/bottomLeftImageFrame.png'
-import topImageFrameMobile from '../../../public/imagers/topImageFrameMobile.png'
-import bottomImageFrameMobile from '../../../public/imagers/bottomImageFrameMobile.png'
-import brasaoCiap from '../../../public/imagers/brasao_ciap.webp'
-import brasaoPmpa from '../../../public/imagers/brasao_pmpa.webp'
+import styles from './Login.module.scss'
+import topRightImageFrame from '../../../public/imagers/topRightImageFrame.webp'
+import bottomLeftImageFrame from '../../../public/imagers/bottomLeftImageFrame.webp'
+import topImageFrameMobile from '../../../public/imagers/topImageFrameMobile.webp'
+import bottomImageFrameMobile from '../../../public/imagers/bottomImageFrameMobile.webp'
+import brasaoCiap from '../../../public/imagers/brasao_ciap.svg'
+import brasaoPmpa from '../../../public/imagers/brasao_pmpa.svg'
+import bonecaCiap from '../../../public/imagers/boneca-ciap.webp'
 import { MdOutlineMailOutline } from 'react-icons/md'
 import { BiLockAlt } from 'react-icons/bi'
 import { useState } from 'react'
 
-export default function Login() {
-  const [colorIcon, setColorIcon] = useState('#DFDFEE')
-  const [colorIcon2, setColorIcon2] = useState('#DFDFEE')
+export default function Index2() {
+  const [inputColorChangeEmail, setInputColorChangeEmail] = useState('#DFDFEE')
+  const [inputColorChangePwd, setInputColorChangePwd] = useState('#DFDFEE')
+
   return (
-    <div className={styles.login}>
-      <div className={styles.topContainerImages}>
-        <Image
-          className={styles.topRightImageFrame}
-          src={topRightImageFrame}
-          alt={'top-right-image-frame'}
-        />
-        <Image
-          className={styles.topImageFrameMobile}
-          src={topImageFrameMobile}
-          alt={'top-image-frame-mobile'}
-        />
-      </div>
-      <div className={styles.centerContainer}>
-        <div className={styles.boxCenterContainers}>
-          <div className={styles.leftBox}></div>
-          <div className={styles.rightBox}>
-            <div className={styles.boxInputsAll}>
-              <div className={styles.inputStylesBoxs}>
-                <MdOutlineMailOutline
-                  className={styles.inputIcons}
-                  color={colorIcon2}
-                  width={20}
-                  height={16}
-                />
-                <input
-                  onFocus={() => setColorIcon2('#2E3094')}
-                  onBlur={() => setColorIcon2('#DFDFEE')}
-                  type="text"
-                  className={styles.usersInputBox}
-                  placeholder="Email:"
-                />
+    <div className={styles.loginWrapper}>
+      <Image
+        className={styles.topRightImageFrame}
+        src={topRightImageFrame}
+        alt="top-right-frame-image"
+      />
+      <Image
+        className={styles.topImageFrameMobile}
+        src={topImageFrameMobile}
+        alt="top-frame-mobile"
+      />
+      <div className={styles.loginContainer}>
+        <main className={styles.loginCenterBox}>
+          <section className={styles.leftBox}>
+            <Image
+              className={styles.bonecaImage}
+              src={bonecaCiap}
+              alt="boneca-ciap"
+            />
+          </section>
+          <section className={styles.rightBox}>
+            <form action="">
+              <div className={styles.formSection}>
+                <div className={styles.inputsBox}>
+                  <MdOutlineMailOutline
+                    color={inputColorChangeEmail}
+                    className={styles.iconsInput}
+                    size={20}
+                  />
+                  <input
+                    onFocus={() => setInputColorChangeEmail('#2e3094')}
+                    onBlur={() => setInputColorChangeEmail('#DFDFEE')}
+                    placeholder="Email:"
+                    type="text"
+                  />
+                </div>
+                <div className={styles.inputsBox}>
+                  <BiLockAlt
+                    color={inputColorChangePwd}
+                    className={styles.iconsInput}
+                    size={20}
+                  />
+                  <input
+                    onFocus={() => setInputColorChangePwd('#2e3094')}
+                    onBlur={() => setInputColorChangePwd('#DFDFEE')}
+                    placeholder="Senha:"
+                    type="password"
+                  />
+                </div>
+                <span className={styles.forgetPasswordSpan}>
+                  <a href="#">Esqueci minha senha</a>
+                </span>
+                <button>ENTRAR</button>
               </div>
-              <div className={styles.inputStylesBoxs}>
-                <BiLockAlt
-                  className={styles.inputIcons}
-                  color={colorIcon}
-                  width={20}
-                  height={16}
-                />
-                <input
-                  onFocus={() => setColorIcon('#2E3094')}
-                  onBlur={() => setColorIcon('#DFDFEE')}
-                  type="password"
-                  className={styles.usersInputBox}
-                  placeholder={`Senha:`}
-                />
-              </div>
-            </div>
-            <div className={styles.containerForgetLink}>
-              <a className={styles.ForgetLink} href="#">
-                Esqueci minha senha
-              </a>
-            </div>
-            <div className={styles.buttonContainer}>
-              <button className={styles.buttonLogin}>ENTRAR</button>
-            </div>
-            <div className={styles.brasaoBoxers}>
+            </form>
+            <footer>
               <div>
                 <hr />
-                <Image src={brasaoCiap} alt="brasaoCiap" />
+                <Image
+                  className={styles.footerImage}
+                  src={brasaoCiap}
+                  alt="brasao_ciap"
+                />
               </div>
               <div>
                 <hr />
-                <Image src={brasaoPmpa} alt="brasaoPmpa" />
+                <Image
+                  className={styles.footerImage}
+                  src={brasaoPmpa}
+                  alt="brasao_pmpa"
+                />
               </div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.ciapNameFooter}>
-          <span className={styles.firstNameFooter}>
+            </footer>
+          </section>
+        </main>
+        <footer className={styles.systemNameFooter}>
+          <p className={styles.systemName}>
             SISTEMA DE GESTÃO DE PRONTUÁRIOS - CIAP
-          </span>
-          <span className={styles.secondNameFooter}>
-            CENTRO INTEGRADO DE ATENÇÃO PSICOSSOCIAL
-          </span>
-        </div>
+          </p>
+          <p className={styles.ciapName}>
+            CENTRO INTEGRADO DE ATENÇÃO PSICOSSOCIAL{' '}
+          </p>
+        </footer>
       </div>
-      <div className={styles.bottomContainerImages}>
-        <Image
-          className={styles.bottomLeftImageFrame}
-          src={bottomLeftImageFrame}
-          alt={'bottom-left-image-frame'}
-        />
-        <Image
-          className={styles.bottomImageFrameMobile}
-          src={bottomImageFrameMobile}
-          alt={'top-right-image-frame'}
-        />
-      </div>
+      <Image
+        className={styles.bottomLeftImageFrame}
+        src={bottomLeftImageFrame}
+        alt="Bottom-image-frame-moldure"
+      />
+      <Image
+        className={styles.bottomImageFrameMobile}
+        src={bottomImageFrameMobile}
+        alt="Bottom-image-frame-moldure"
+      />
     </div>
   )
 }
