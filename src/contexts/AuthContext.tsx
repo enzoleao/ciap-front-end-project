@@ -28,7 +28,7 @@ export function AuthProvider({ children }: any) {
   useEffect(() => {
     const { 'auth-token': token } = parseCookies()
     if (token) {
-      return console.log(token)
+      return console.log()
     }
   }, [])
 
