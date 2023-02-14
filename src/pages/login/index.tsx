@@ -20,7 +20,8 @@ export default function Login() {
   const { register, handleSubmit } = useForm()
   const { signIn } = useContext(AuthContext)
 
-  const handleSingIn = async (data: any) => {
+  const handleSingIn = async (data: any, e: any) => {
+    e.preventDefault()
     try {
       await signIn(data)
     } catch (err) {

@@ -10,7 +10,7 @@ export default function Dashboard() {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { 'next-auth-token': token } = parseCookies(ctx)
+  const { 'auth-token': token } = parseCookies(ctx)
   if (!token) {
     return {
       redirect: {
