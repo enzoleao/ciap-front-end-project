@@ -9,11 +9,24 @@ import brasaoPmpa from '../../../public/imagers/brasao_pmpa.svg'
 import bonecaCiap from '../../../public/imagers/boneca-ciap.webp'
 import { MdOutlineMailOutline } from 'react-icons/md'
 import { BiLockAlt } from 'react-icons/bi'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { useForm } from 'react-hook-form'
+import { AuthContext } from '@/contexts/AuthContext'
 
-export default function Index2() {
+export default function Login() {
   const [inputColorChangeEmail, setInputColorChangeEmail] = useState('#DFDFEE')
   const [inputColorChangePwd, setInputColorChangePwd] = useState('#DFDFEE')
+
+  const { register, handleSubmit } = useForm()
+  const { signIn } = useContext(AuthContext)
+
+  const handleSingIn = async (data: any) => {
+    try {
+      await signIn(data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
     <div className={styles.loginWrapper}>
@@ -37,7 +50,7 @@ export default function Index2() {
             />
           </section>
           <section className={styles.rightBox}>
-            <form action="">
+            <form onSubmit={handleSubmit(handleSingIn)} action="">
               <div className={styles.formSection}>
                 <div className={styles.inputsBox}>
                   <MdOutlineMailOutline
@@ -46,6 +59,7 @@ export default function Index2() {
                     size={20}
                   />
                   <input
+                    {...register('email')}
                     onFocus={() => setInputColorChangeEmail('#2e3094')}
                     onBlur={() => setInputColorChangeEmail('#DFDFEE')}
                     placeholder="Email:"
@@ -59,6 +73,7 @@ export default function Index2() {
                     size={20}
                   />
                   <input
+                    {...register('password')}
                     onFocus={() => setInputColorChangePwd('#2e3094')}
                     onBlur={() => setInputColorChangePwd('#DFDFEE')}
                     placeholder="Senha:"
@@ -68,7 +83,7 @@ export default function Index2() {
                 <span className={styles.forgetPasswordSpan}>
                   <a href="#">Esqueci minha senha</a>
                 </span>
-                <button>ENTRAR</button>
+                <button type="submit">ENTRAR</button>
               </div>
             </form>
             <footer>
