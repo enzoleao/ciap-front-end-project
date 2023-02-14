@@ -48,8 +48,8 @@ export function AuthProvider({ children }: any) {
       api.defaults.headers.authorization = `Bearer ${token}`
 
       Router.push('/dashboard')
-    } catch (err) {
-      console.log(err)
+    } catch (err: any) {
+      alert(err.response.data.message)
     }
   }
 
