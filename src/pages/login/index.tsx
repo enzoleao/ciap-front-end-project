@@ -9,6 +9,7 @@ import brasaoPmpa from '../../../public/imagers/brasao_pmpa.svg'
 import bonecaCiap from '../../../public/imagers/boneca-ciap.webp'
 import { MdOutlineMailOutline } from 'react-icons/md'
 import { BiLockAlt } from 'react-icons/bi'
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 import { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { AuthContext } from '@/contexts/AuthContext'
@@ -16,9 +17,10 @@ import { AuthContext } from '@/contexts/AuthContext'
 export default function Login() {
   const [inputColorChangeEmail, setInputColorChangeEmail] = useState('#DFDFEE')
   const [inputColorChangePwd, setInputColorChangePwd] = useState('#DFDFEE')
-
+  const [eyeSelector, setEyeSelector] = useState(1)
   const { register, handleSubmit } = useForm()
   const { signIn } = useContext(AuthContext)
+  const [passowordType, setPasswordType] = useState('password')
 
   const handleSingIn = async (data: any, e: any) => {
     e.preventDefault()
@@ -28,7 +30,14 @@ export default function Login() {
       console.log(err)
     }
   }
-
+  const handleShowPassword = () => {
+    setEyeSelector(0)
+    setPasswordType('text')
+  }
+  const handleUnshowPassowrd = () => {
+    setEyeSelector(1)
+    setPasswordType('password')
+  }
   return (
     <div className={styles.loginWrapper}>
       <Image
@@ -78,8 +87,23 @@ export default function Login() {
                     onFocus={() => setInputColorChangePwd('#2e3094')}
                     onBlur={() => setInputColorChangePwd('#DFDFEE')}
                     placeholder="Senha:"
-                    type="password"
+                    type={passowordType}
                   />
+                  {eyeSelector === 1 ? (
+                    <AiFillEyeInvisible
+                      size={20}
+                      onClick={handleShowPassword}
+                      className={styles.eyePassword}
+                      color={inputColorChangePwd}
+                    />
+                  ) : (
+                    <AiFillEye
+                      size={20}
+                      onClick={handleUnshowPassowrd}
+                      className={styles.eyePassword}
+                      color={inputColorChangePwd}
+                    />
+                  )}
                 </div>
                 <span className={styles.forgetPasswordSpan}>
                   <a href="#">Esqueci minha senha</a>

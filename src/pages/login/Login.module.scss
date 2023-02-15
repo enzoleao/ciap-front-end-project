@@ -42,6 +42,7 @@
             box-shadow: inset 0.188rem 0.5rem 5.438rem 0.188rem rgba(0, 0, 0, 0.25);
             border-radius: 1.563rem;
             z-index:1;
+
                 .leftBox {
                     .bonecaImage{
                         position: relative;
@@ -94,7 +95,13 @@
                                             left: 2.125rem;
                                         }
                                     }
-                                    
+                                    .eyePassword {
+                                        position: relative;
+                                        top: 1.475rem;
+                                        right: 2.125rem;
+                                        cursor: pointer;
+                                        
+                                    }
                                     input {
                                         width: 100%;
                                         background:var(--blue-600);
