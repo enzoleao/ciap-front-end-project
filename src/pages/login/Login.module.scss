@@ -43,6 +43,7 @@
             border-radius: 1.563rem;
             z-index:1;
             box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+                
                 .leftBox {
                     .bonecaImage{
                         position: relative;
@@ -75,71 +76,86 @@
                             flex-direction: column;
                             justify-content: center;
                             align-items: center;
-                            gap: 1.688rem;
                             width: 100%;
                             padding: 0rem 3.365rem;
 
+                            .eyePassword {
+                                position: relative;
+                                left: 9.438rem;
+                                top: -2.688rem;
+                                z-index: 1;
+                                cursor: pointer;
+                                
+                                @media(max-width:1172px){
+                                    top: -40px;
+                                    left: 8.038rem;
+                                }
+                                @media(max-width:50rem){
+                                    top: -30px;
+                                    left: 8.038rem;
+                                }
+                            }
 
-                            .inputsBox {
+                            .boxInputsFirst {
                                 display: flex;
-                                width: calc(100% + 5px);
+                                flex-direction: column;
+                                width: 100%;
+                                gap: 0.765rem;
 
-                                    .iconsInput{
-                                        display: flex;
-                                        position: relative;
-                                        top: 1.375rem;
-                                        left: 2.125rem;
-                                        z-index: 1;
-                                        @media (max-width:50rem){
-                                            top: 0.683rem;
+                                .inputsBox {
+                                    display: flex;
+                                    width: 100%;
+                                        .iconsInput{
+                                            display: flex;
+                                            position: relative;
+                                            top: 1.375rem;
                                             left: 2.125rem;
+                                            z-index: 1;
+                                            @media (max-width:50rem){
+                                                top: 0.683rem;
+                                                left: 2.125rem;
+                                            }
                                         }
-                                    }
-                                    .eyePassword {
-                                        position: relative;
-                                        top: 1.475rem;
-                                        right: 2.125rem;
-                                        z-index: 1;
-                                        cursor: pointer;
                                         
-                                    }
-                                    input {
-                                        width: 100%;
-                                        background:var(--blue-600);
-                                        border: none;
-                                        height: 4.063rem;
-                                        max-width: 19.813rem;
-                                        border-radius: 2.063rem;
-                                        color:var(--white);
-                                        font-weight: 600;
-                                        font-size: 1rem;
-                                        padding-left: 2.5rem;
-                                        line-height: 1.188rem;
-                                        outline: none;
-                                        border-bottom: 0.125rem solid var(--white);
-                                        transition: 0.1s background;
-                                        &::placeholder {
-                                            color: inherit;
-                                        }
-        
-                                        &:focus{
-                                            background: #BEBFDE;
-                                            border-bottom: 0.125rem solid var(--blue-400);
-                                            color:var(--blue-400);
+                                        input {
+                                            width: 100%;
+                                            background:var(--blue-600);
+                                            border: none;
+                                            height: 4.063rem;
+                                            max-width: 19.813rem;
+                                            border-radius: 2.063rem;
+                                            color:var(--white);
                                             font-weight: 600;
+                                            font-size: 1rem;
+                                            padding-left: 2.5rem;
+                                            line-height: 1.188rem;
+                                            outline: none;
+                                            border-bottom: 0.125rem solid var(--white);
+                                            transition: 0.1s background;
+                                            &::placeholder {
+                                                color: inherit;
+                                            }
+            
+                                            &:focus{
+                                                background: #BEBFDE;
+                                                border-bottom: 0.125rem solid var(--blue-400);
+                                                color:var(--blue-400);
+                                                font-weight: 600;
+                                            }
+            
+                                            @media (max-width:50rem) {
+                                                min-width: 15.188rem;
+                                                height: 3rem;                                           
+                                                font-weight: 500;
+                                                font-size: 0.75rem;
+                                                line-height: 0.875rem;
+                                            }
                                         }
-        
+                                        
                                         @media (max-width:50rem) {
-                                            min-width: 15.188rem;
-                                            height: 3rem;
-                                            font-weight: 500;
-                                            font-size: 0.75rem;
-                                            line-height: 0.875rem;
+                                            justify-content: center;
                                         }
-                                    }
-                                    @media (max-width:50rem) {
-                                        justify-content: center;
-                                    }
+                                }
                             }
                             
                             .forgetPasswordSpan{
@@ -166,6 +182,7 @@
                                 border: none;
                                 min-width: 15.188rem;
                                 height: 4.063rem;
+                                margin-top: 30px;
                                 border-radius: 2.188rem;
                                 color: var(--blue-400);
                                 font-weight: 600;
@@ -181,7 +198,7 @@
                                 }
 
                                 @media (max-width: 50rem) {
-                                    margin-top: 0;
+                                    margin-top: 20px;
                                     min-width: 18rem;
                                     max-width: 16rem;
                                     height: 2.75rem;

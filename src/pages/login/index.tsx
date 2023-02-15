@@ -62,49 +62,54 @@ export default function Login() {
           <section className={styles.rightBox}>
             <form onSubmit={handleSubmit(handleSingIn)} action="">
               <div className={styles.formSection}>
-                <div className={styles.inputsBox}>
-                  <MdOutlineMailOutline
-                    color={inputColorChangeEmail}
-                    className={styles.iconsInput}
-                    size={20}
-                  />
-                  <input
-                    {...register('email')}
-                    onFocus={() => setInputColorChangeEmail('#2e3094')}
-                    onBlur={() => setInputColorChangeEmail('#DFDFEE')}
-                    placeholder="Email:"
-                    type="text"
-                  />
+                <div className={styles.boxInputsFirst}>
+                  <div className={styles.inputsBox}>
+                    <MdOutlineMailOutline
+                      color={inputColorChangeEmail}
+                      className={styles.iconsInput}
+                      size={20}
+                    />
+                    <input
+                      {...register('email')}
+                      onFocus={() => setInputColorChangeEmail('#2e3094')}
+                      onBlur={() => setInputColorChangeEmail('#DFDFEE')}
+                      placeholder="Email:"
+                      type="email"
+                      required
+                    />
+                  </div>
+                  <div className={styles.inputsBox}>
+                    <BiLockAlt
+                      id="lockIcon"
+                      color={inputColorChangePwd}
+                      className={styles.iconsInput}
+                      size={20}
+                    />
+                    <input
+                      {...register('password')}
+                      required
+                      onFocus={() => setInputColorChangePwd('#2e3094')}
+                      onBlur={() => setInputColorChangePwd('#DFDFEE')}
+                      placeholder="Senha:"
+                      type={passowordType}
+                    />
+                  </div>
                 </div>
-                <div className={styles.inputsBox}>
-                  <BiLockAlt
+                {eyeSelector === 1 ? (
+                  <AiFillEyeInvisible
+                    size={20}
+                    onClick={handleShowPassword}
+                    className={styles.eyePassword}
                     color={inputColorChangePwd}
-                    className={styles.iconsInput}
+                  />
+                ) : (
+                  <AiFillEye
                     size={20}
+                    onClick={handleUnshowPassowrd}
+                    className={styles.eyePassword}
+                    color={inputColorChangePwd}
                   />
-                  <input
-                    {...register('password')}
-                    onFocus={() => setInputColorChangePwd('#2e3094')}
-                    onBlur={() => setInputColorChangePwd('#DFDFEE')}
-                    placeholder="Senha:"
-                    type={passowordType}
-                  />
-                  {eyeSelector === 1 ? (
-                    <AiFillEyeInvisible
-                      size={20}
-                      onClick={handleShowPassword}
-                      className={styles.eyePassword}
-                      color={inputColorChangePwd}
-                    />
-                  ) : (
-                    <AiFillEye
-                      size={20}
-                      onClick={handleUnshowPassowrd}
-                      className={styles.eyePassword}
-                      color={inputColorChangePwd}
-                    />
-                  )}
-                </div>
+                )}
                 <span className={styles.forgetPasswordSpan}>
                   <a href="#">Esqueci minha senha</a>
                 </span>
