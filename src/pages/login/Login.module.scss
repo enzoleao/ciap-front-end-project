@@ -42,7 +42,7 @@
             box-shadow: inset 0.188rem 0.5rem 5.438rem 0.188rem rgba(0, 0, 0, 0.25);
             border-radius: 1.563rem;
             z-index:1;
-
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
                 .leftBox {
                     .bonecaImage{
                         position: relative;
@@ -82,14 +82,14 @@
 
                             .inputsBox {
                                 display: flex;
-                                width: 100%;
+                                width: calc(100% + 5px);
 
                                     .iconsInput{
                                         display: flex;
                                         position: relative;
                                         top: 1.375rem;
                                         left: 2.125rem;
-
+                                        z-index: 1;
                                         @media (max-width:50rem){
                                             top: 0.683rem;
                                             left: 2.125rem;
@@ -99,6 +99,7 @@
                                         position: relative;
                                         top: 1.475rem;
                                         right: 2.125rem;
+                                        z-index: 1;
                                         cursor: pointer;
                                         
                                     }

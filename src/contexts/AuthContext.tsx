@@ -28,7 +28,11 @@ export function AuthProvider({ children }: any) {
   useEffect(() => {
     const { 'auth-token': token } = parseCookies()
     if (token) {
-      return console.log()
+      try {
+        api.get('/users')
+      } catch (err) {
+        Router.push('/login')
+      }
     }
   }, [])
 
