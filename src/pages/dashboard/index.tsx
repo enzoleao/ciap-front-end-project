@@ -3,10 +3,14 @@ import { GetServerSideProps } from 'next'
 import { useContext } from 'react'
 import { parseCookies } from 'nookies'
 export default function Dashboard() {
-  const { user } = useContext(AuthContext)
+  const { user, logout } = useContext(AuthContext)
   console.log(user)
 
-  return <div></div>
+  return (
+    <div>
+      <button onClick={logout}>Logout</button>
+    </div>
+  )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {

@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
-import { setCookie, parseCookies } from 'nookies'
+import { setCookie, parseCookies, destroyCookie } from 'nookies'
 import api from '@/services/api'
 import Router from 'next/router'
 
@@ -17,6 +17,7 @@ type AuthContextType = {
   isAuthenticated: boolean
   user: User | null
   signIn: (data: SignInData) => Promise<void>
+  logout: () => void
 }
 
 export const AuthContext = createContext({} as AuthContextType)
@@ -56,9 +57,12 @@ export function AuthProvider({ children }: any) {
       alert(err.response.data.message)
     }
   }
-
+  async function logout() {
+    destroyCookie(undefined, 'auth-token')
+    Router.push('/')
+  }
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, signIn }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, signIn, logout }}>
       {children}
     </AuthContext.Provider>
   )
