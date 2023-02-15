@@ -14,15 +14,21 @@ import { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { AuthContext } from '@/contexts/AuthContext'
 
+type dataUsers = {
+  email: string
+  password: string
+}
+
 export default function Login() {
   const [inputColorChangeEmail, setInputColorChangeEmail] = useState('#DFDFEE')
   const [inputColorChangePwd, setInputColorChangePwd] = useState('#DFDFEE')
   const [eyeSelector, setEyeSelector] = useState(1)
-  const { register, handleSubmit } = useForm()
+
+  const { register, handleSubmit } = useForm<dataUsers>()
   const { signIn } = useContext(AuthContext)
   const [passowordType, setPasswordType] = useState('password')
 
-  const handleSingIn = async (data: any, e: any) => {
+  const handleSingIn = async (data: dataUsers, e: any) => {
     e.preventDefault()
     try {
       await signIn(data)
