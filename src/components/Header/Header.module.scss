@@ -63,9 +63,9 @@
             line-height: 19px;
             transition: 350ms;
             ul {
+                padding: 0;
                 display: flex;
                 flex-direction: column;
-
                 li {
                     width: 100%;
                     display: flex;
