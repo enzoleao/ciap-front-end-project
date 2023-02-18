@@ -31,7 +31,7 @@ export default function Sidebar() {
         </li>
         <li>
           <FaUser className={styles.liIcons} />
-          Usuário
+          Usuários
         </li>
         <li>
           <FaClipboardList className={styles.liIcons} />
