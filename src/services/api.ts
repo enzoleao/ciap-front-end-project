@@ -3,7 +3,7 @@ import { parseCookies } from 'nookies'
 
 const cookies = parseCookies()
 const api = axios.create({
-  baseURL: 'https://ciap-api.onrender.com',
+  baseURL: 'https://backendciap-production.up.railway.app',
   headers: {
     Authorization: `Bearer ${cookies['auth-token']}`,
     'Content-Type': 'application/json',
