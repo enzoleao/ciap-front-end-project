@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { setCookie /*, parseCookies */, destroyCookie } from 'nookies'
+import { setCookie, parseCookies, destroyCookie } from 'nookies'
 import api from '@/services/api'
 import Router from 'next/router'
 
@@ -35,8 +35,13 @@ export function AuthProvider({ children }: any) {
   const [showSideBar, setShowSideBar] = useState(false)
   const [visibilityUserDropDown, setVisibilityUserDropDown] = useState(false)
   useEffect(() => {
-    // const { 'auth-token': token } = parseCookies()
-
+    const { 'auth-token': token } = parseCookies()
+    if (token) {
+      api
+        .get('/me')
+        .then((res) => setUser(res.data))
+        .catch((err) => console.log(err))
+    }
     setIsLoading(false)
   }, [])
 

@@ -4,8 +4,13 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaUserCircle } from 'react-icons/fa'
 import { MdOutlinePowerSettingsNew } from 'react-icons/md'
 export default function Header() {
-  const { showSiderBar, visibilityUserDropDown, setVisibilityDropDownUser } =
-    useAuth()
+  const {
+    showSiderBar,
+    visibilityUserDropDown,
+    setVisibilityDropDownUser,
+    user,
+    logout,
+  } = useAuth()
 
   return (
     <header className={styles.headerContainer}>
@@ -16,7 +21,7 @@ export default function Header() {
         onClick={setVisibilityDropDownUser}
         className={styles.rightBoxHeader}
       >
-        <p>Juliana Moura</p>
+        <p>{user?.name}</p>
         <img src="https://github.com/enzoleao.png" alt="user-avatar" />
       </div>
       <nav
@@ -31,7 +36,7 @@ export default function Header() {
             <FaUserCircle className={styles.iconsDropDownMenu} />
             Editar Perfil
           </li>
-          <li className={styles.lastLi}>
+          <li onClick={logout} className={styles.lastLi}>
             <MdOutlinePowerSettingsNew className={styles.iconsDropDownMenu} />
             Finalizar Sessão
           </li>
