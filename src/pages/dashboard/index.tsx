@@ -1,14 +1,23 @@
-import { AuthContext } from '@/contexts/AuthContext'
+import styles from './Dashboard.module.scss'
 import { GetServerSideProps } from 'next'
-import { useContext } from 'react'
 import { parseCookies } from 'nookies'
+import Sidebar from '@/components/Sidebar'
+import Header from '@/components/Header'
+import { useAuth } from '@/contexts/AuthContext'
 export default function Dashboard() {
-  const { user, logout } = useContext(AuthContext)
-  console.log(user)
+  const { bodyUnshowSideBar, bodyUnshowDropDownMenu } = useAuth()
 
+  const unshow = () => {
+    bodyUnshowSideBar()
+    bodyUnshowDropDownMenu()
+  }
   return (
-    <div>
-      <button onClick={logout}>Logout</button>
+    <div className={styles.dashboardWrapper}>
+      <Header />
+      <Sidebar />
+      <div onClick={unshow} className={styles.dashboardContainer}>
+        <div>oi</div>
+      </div>
     </div>
   )
 }
@@ -23,7 +32,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       },
     }
   }
-
   return {
     props: {},
   }

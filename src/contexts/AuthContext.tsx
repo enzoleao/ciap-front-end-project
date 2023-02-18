@@ -1,5 +1,5 @@
-import { createContext, useEffect, useState } from 'react'
-import { setCookie, parseCookies, destroyCookie } from 'nookies'
+import { createContext, useContext, useEffect, useState } from 'react'
+import { setCookie /*, parseCookies */, destroyCookie } from 'nookies'
 import api from '@/services/api'
 import Router from 'next/router'
 
@@ -18,23 +18,26 @@ type AuthContextType = {
   user: User | null
   signIn: (data: SignInData) => Promise<void>
   logout: () => void
+  isLoading: boolean
+  showSideBar: boolean
+  showSiderBar: () => void
+  bodyUnshowSideBar: () => void
+  visibilityUserDropDown: boolean
+  setVisibilityDropDownUser: () => void
+  bodyUnshowDropDownMenu: () => void
 }
 
 export const AuthContext = createContext({} as AuthContextType)
 
 export function AuthProvider({ children }: any) {
   const [user, setUser] = useState<User | null>(null)
-  const isAuthenticated = !!user
-
+  const [isLoading, setIsLoading] = useState(true)
+  const [showSideBar, setShowSideBar] = useState(false)
+  const [visibilityUserDropDown, setVisibilityUserDropDown] = useState(false)
   useEffect(() => {
-    const { 'auth-token': token } = parseCookies()
-    if (token) {
-      try {
-        api.get('/users')
-      } catch (err) {
-        Router.push('/login')
-      }
-    }
+    // const { 'auth-token': token } = parseCookies()
+
+    setIsLoading(false)
   }, [])
 
   async function signIn({ email, password }: SignInData) {
@@ -61,9 +64,30 @@ export function AuthProvider({ children }: any) {
     destroyCookie(undefined, 'auth-token')
     Router.push('/')
   }
+  const showSiderBar = () => setShowSideBar(!showSideBar)
+  const bodyUnshowSideBar = () => setShowSideBar(false)
+
+  const setVisibilityDropDownUser = () =>
+    setVisibilityUserDropDown(!visibilityUserDropDown)
+  const bodyUnshowDropDownMenu = () => setVisibilityUserDropDown(false)
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, signIn, logout }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        isAuthenticated: !!user,
+        signIn,
+        logout,
+        isLoading,
+        showSideBar,
+        showSiderBar,
+        bodyUnshowSideBar,
+        visibilityUserDropDown,
+        setVisibilityDropDownUser,
+        bodyUnshowDropDownMenu,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   )
 }
+export const useAuth = () => useContext(AuthContext)

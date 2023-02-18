@@ -1,0 +1,73 @@
+.sideBarContainer, .newSidestyles {
+    position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    visibility: hidden;
+    max-width: 350px;
+    left: 0;
+    opacity: 0;
+    flex-direction: column;
+    background:#FCFCFC;
+    border-radius: 0px 25px 25px 0px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.42);
+    transition: all 350ms;
+    header {
+        display: flex;
+        height: 110px;
+        background-color: var(--blue-100);
+        border-radius: 0px 25px 0px 0px;
+        color: #44469F;
+        font-weight: 700;
+        width: 100%;
+        font-size: 16px;
+        line-height: 19px;
+        align-items: center;
+        p{
+            text-align: center;
+            padding-left: 28px;
+        }
+        .imagesHeader {
+            width: 36px;
+            height: 49px;
+            margin-right: 42px;
+        }
+    }
+
+
+    ul {
+        display: inherit;
+        flex-direction: column;
+        padding-top: 52px;
+        flex-grow: 1;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+
+        li {
+            gap: 12px;
+            padding-left: 31px;
+            display: inherit;
+            align-items: center;
+            height: 100%;
+            max-height: 50px;
+            text-align: start;
+            color: #797979;
+            cursor: pointer;
+        }
+        li:hover {
+            background: rgba(43, 35, 35, 0.08);
+        }
+        .liIcons {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+}
+.newSidestyles {
+    visibility: visible;
+    left: 0;
+    opacity: 1;
+}

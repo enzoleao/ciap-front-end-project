@@ -23,17 +23,23 @@ Projeto para registro de prontuarios
 <h5>Páginas</h5>
 
 - [x] Página de Login
-- [ ] Dashboard
-
+- [x] Dashboard
 <h5>Componentes</h5>
-
+- [x] Header
+- [x] Sidebar
+- [x] MenuUsuario
 
 ### 🛠 Tecnologias
 
 - [Next.js](https://nextjs.org/)
 - [React-Icons](https://react-icons.github.io/react-icons)
 - [React.js](https://pt-br.reactjs.org/)
-- [typescript](https://www.typescriptlang.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Axios](https://axios-http.com/)
+- [Sass](https://sass-lang.com/)
+- [React-hook-form](https://react-hook-form.com/)
+- [Nookies](https://www.npmjs.com/package/nookies)
+- [React-icons](https://react-icons.github.io/react-icons/)
 - [VSCode](https://code.visualstudio.com/)
 
 ---
