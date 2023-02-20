@@ -25,6 +25,8 @@ type AuthContextType = {
   visibilityUserDropDown: boolean
   setVisibilityDropDownUser: () => void
   bodyUnshowDropDownMenu: () => void
+  showDashboardCases: string
+  setShowCasesDashboard: any
 }
 
 export const AuthContext = createContext({} as AuthContextType)
@@ -34,13 +36,17 @@ export function AuthProvider({ children }: any) {
   const [isLoading, setIsLoading] = useState(true)
   const [showSideBar, setShowSideBar] = useState(false)
   const [visibilityUserDropDown, setVisibilityUserDropDown] = useState(false)
+  const [showDashboardCases, setShowDashboardCases] = useState('home')
+
   useEffect(() => {
     const { 'auth-token': token } = parseCookies()
     if (token) {
       api
         .get('/me')
         .then((res) => setUser(res.data))
-        .catch((err) => console.log(err))
+        .catch(() => Router.push('/'))
+    } else {
+      Router.push('/')
     }
     setIsLoading(false)
   }, [])
@@ -67,14 +73,20 @@ export function AuthProvider({ children }: any) {
   }
   async function logout() {
     destroyCookie(undefined, 'auth-token')
+    setUser(null)
     Router.push('/')
   }
+
   const showSiderBar = () => setShowSideBar(!showSideBar)
   const bodyUnshowSideBar = () => setShowSideBar(false)
 
   const setVisibilityDropDownUser = () =>
     setVisibilityUserDropDown(!visibilityUserDropDown)
+
   const bodyUnshowDropDownMenu = () => setVisibilityUserDropDown(false)
+
+  const setShowCasesDashboard = (data: string) => setShowDashboardCases(data)
+
   return (
     <AuthContext.Provider
       value={{
@@ -89,10 +101,13 @@ export function AuthProvider({ children }: any) {
         visibilityUserDropDown,
         setVisibilityDropDownUser,
         bodyUnshowDropDownMenu,
+        showDashboardCases,
+        setShowCasesDashboard,
       }}
     >
       {children}
     </AuthContext.Provider>
   )
 }
+
 export const useAuth = () => useContext(AuthContext)

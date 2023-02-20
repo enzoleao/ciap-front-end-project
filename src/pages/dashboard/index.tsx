@@ -5,7 +5,12 @@ import Sidebar from '@/components/Sidebar'
 import Header from '@/components/Header'
 import { useAuth } from '@/contexts/AuthContext'
 export default function Dashboard() {
-  const { bodyUnshowSideBar, bodyUnshowDropDownMenu, isLoading } = useAuth()
+  const {
+    bodyUnshowSideBar,
+    bodyUnshowDropDownMenu,
+    isLoading,
+    showDashboardCases,
+  } = useAuth()
 
   const unshow = () => {
     bodyUnshowSideBar()
@@ -20,7 +25,24 @@ export default function Dashboard() {
           <Header />
           <Sidebar />
           <div onClick={unshow} className={styles.dashboardContainer}>
-            <div>oi</div>
+            <div className={styles.dashboardMain}>
+              {(() => {
+                switch (showDashboardCases) {
+                  case 'home':
+                    return <h1>Home</h1>
+                  case 'funcionarios':
+                    return <h1>Funcionarios</h1>
+                  case 'usuarios':
+                    return <h1>Usuarios</h1>
+                  case 'relatorios':
+                    return <h1>Relatorios</h1>
+                  case 'configuracoes':
+                    return <h1>Configuracoes</h1>
+                  default:
+                    return null
+                }
+              })()}
+            </div>
           </div>
         </>
       )}

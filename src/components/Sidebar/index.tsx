@@ -6,7 +6,7 @@ import { MdSettings } from 'react-icons/md'
 import { BiHome } from 'react-icons/bi'
 import { useAuth } from '@/contexts/AuthContext'
 export default function Sidebar() {
-  const { showSideBar } = useAuth()
+  const { showSideBar, setShowCasesDashboard, showDashboardCases } = useAuth()
 
   return (
     <aside
@@ -21,23 +21,58 @@ export default function Sidebar() {
         />
       </header>
       <ul>
-        <li>
+        <li
+          className={
+            showDashboardCases === 'home'
+              ? styles.liItensActive
+              : styles.liItens
+          }
+          onClick={() => setShowCasesDashboard('home')}
+        >
           <BiHome className={styles.liIcons} />
           Dashboard
         </li>
-        <li>
+        <li
+          className={
+            showDashboardCases === 'funcionarios'
+              ? styles.liItensActive
+              : styles.liItens
+          }
+          onClick={() => setShowCasesDashboard('funcionarios')}
+        >
           <FaUsers className={styles.liIcons} />
           Funcionários
         </li>
-        <li>
+        <li
+          className={
+            showDashboardCases === 'usuarios'
+              ? styles.liItensActive
+              : styles.liItens
+          }
+          onClick={() => setShowCasesDashboard('usuarios')}
+        >
           <FaUser className={styles.liIcons} />
           Usuários
         </li>
-        <li>
+        <li
+          className={
+            showDashboardCases === 'relatorios'
+              ? styles.liItensActive
+              : styles.liItens
+          }
+          onClick={() => setShowCasesDashboard('relatorios')}
+        >
           <FaClipboardList className={styles.liIcons} />
           Relatórios
         </li>
-        <li>
+        <li
+          className={
+            showDashboardCases === 'configuracoes'
+              ? styles.liItensActive
+              : styles.liItens
+          }
+          onClick={() => setShowCasesDashboard('configuracoes')}
+        >
           <MdSettings className={styles.liIcons} />
           Configurações
         </li>

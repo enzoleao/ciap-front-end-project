@@ -45,7 +45,8 @@
         font-size: 20px;
         line-height: 24px;
         padding-left: 0;
-        li {
+
+        .liItens, .liItensActive {
             gap: 12px;
             padding-left: 31px;
             display: inherit;
@@ -55,9 +56,16 @@
             text-align: start;
             color: #797979;
             cursor: pointer;
+            border-left: 3px solid #fff;
+            transition: all 0.2s;
         }
         li:hover {
             background: rgba(43, 35, 35, 0.08);
+        }
+        .liItensActive {
+            color: #2E3094;
+            border-left: 3px solid #2E3094;
+            box-shadow: -1px 3px 3px rgba(0, 0, 0, 0.3);
         }
         .liIcons {
             width: 25px;
