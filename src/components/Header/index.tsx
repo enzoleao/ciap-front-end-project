@@ -21,7 +21,7 @@ export default function Header() {
         onClick={setVisibilityDropDownUser}
         className={styles.rightBoxHeader}
       >
-        <p>{user?.name}</p>
+        <p>{user?.fullname}</p>
         <img src="https://github.com/enzoleao.png" alt="user-avatar" />
       </div>
       <nav

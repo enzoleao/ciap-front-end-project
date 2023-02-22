@@ -4,6 +4,11 @@ import { parseCookies } from 'nookies'
 import Sidebar from '@/components/Sidebar'
 import Header from '@/components/Header'
 import { useAuth } from '@/contexts/AuthContext'
+import Employes from '@/components/Employes'
+import Home from '@/components/Home'
+import Users from '@/components/Users'
+import Reports from '@/components/Reports'
+import Settings from '@/components/Settings'
 export default function Dashboard() {
   const {
     bodyUnshowSideBar,
@@ -29,15 +34,15 @@ export default function Dashboard() {
               {(() => {
                 switch (showDashboardCases) {
                   case 'home':
-                    return <h1>Home</h1>
+                    return <Home />
                   case 'funcionarios':
-                    return <h1>Funcionarios</h1>
+                    return <Employes />
                   case 'usuarios':
-                    return <h1>Usuarios</h1>
+                    return <Users />
                   case 'relatorios':
-                    return <h1>Relatorios</h1>
+                    return <Reports />
                   case 'configuracoes':
-                    return <h1>Configuracoes</h1>
+                    return <Settings />
                   default:
                     return null
                 }

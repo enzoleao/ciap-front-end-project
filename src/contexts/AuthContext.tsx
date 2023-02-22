@@ -4,7 +4,7 @@ import api from '@/services/api'
 import Router from 'next/router'
 
 type User = {
-  name: string
+  fullname: string
   email: string
 }
 
@@ -50,7 +50,6 @@ export function AuthProvider({ children }: any) {
     }
     setIsLoading(false)
   }, [])
-
   async function signIn({ email, password }: SignInData) {
     try {
       const response = await api.post('/sessions', {
