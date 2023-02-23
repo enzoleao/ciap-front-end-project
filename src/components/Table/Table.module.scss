@@ -10,8 +10,7 @@
             height: 100%;
             border-spacing: 0;
             border-radius: 25px;
-            
-
+            padding: 2px;
             th {
                 text-align: center;
                 border-bottom: 1px solid rgba(121, 121, 121, 0.7);
@@ -53,6 +52,10 @@
         button {
             background: none;
             border: none;
+        }
+        button:disabled {
+            cursor: not-allowed;
+            
         }
         .paginationsFooterSection {
             display: flex;

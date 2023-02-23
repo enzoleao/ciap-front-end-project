@@ -1,14 +1,14 @@
 import styles from './Dashboard.module.scss'
-import { GetServerSideProps } from 'next'
-import { parseCookies } from 'nookies'
 import Sidebar from '@/components/Sidebar'
 import Header from '@/components/Header'
-import { useAuth } from '@/contexts/AuthContext'
 import Employes from '@/components/Employes'
 import Home from '@/components/Home'
 import Users from '@/components/Users'
 import Reports from '@/components/Reports'
 import Settings from '@/components/Settings'
+import { GetServerSideProps } from 'next'
+import { parseCookies } from 'nookies'
+import { useAuth } from '@/contexts/AuthContext'
 export default function Dashboard() {
   const {
     bodyUnshowSideBar,

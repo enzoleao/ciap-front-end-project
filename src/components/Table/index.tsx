@@ -3,25 +3,24 @@ import { useState } from 'react'
 import { Users } from '../../services/userServices'
 
 export default function Table() {
-  const [itens, setItens] = useState(Users)
-  const [itensPerPage, setItensPerPage] = useState(8)
+  const itensPerPage = 8
   const [currentPage, setCurrentPage] = useState(0)
 
   const startIndex = currentPage * itensPerPage
   const endIndex = startIndex + itensPerPage
-  const pages = Math.ceil(itens.length / itensPerPage)
+  const pages = Math.ceil(Users.length / itensPerPage)
 
-  const currentItens = itens.slice(startIndex, endIndex)
+  const currentItens = Users.slice(startIndex, endIndex)
 
   return (
     <div className={styles.tableContainer}>
       <div className={styles.tableSection}>
         <table>
           <tr>
-            <th className={styles.nameIdentify}>Identificação</th>
-            <th className={styles.nameIdentify}>RG</th>
-            <th className={styles.nameIdentify}>CPF</th>
-            <th className={styles.nameIdentify}>Celular</th>
+            <th>Identificação</th>
+            <th>RG</th>
+            <th>CPF</th>
+            <th>Celular</th>
           </tr>
           <tbody>
             {currentItens.map((item) => {
@@ -38,7 +37,7 @@ export default function Table() {
         </table>
       </div>
       <div className={styles.footerPagination}>
-        <p>Mostrando 1 - 8 de {itens.length} cadastros</p>
+        <p>Mostrando 1 - 8 de {Users.length} cadastros</p>
         <div className={styles.paginationsFooterSection}>
           <button
             disabled={currentPage === 0}
