@@ -20,9 +20,9 @@
             padding-left: 60px;
             padding-bottom: 4px;
             .pName{ 
-                width:60%;
+                width:53%;
                 
-                @media (max-height:900px){
+                @media (max-width:900px){
                     width: 50%;
                  }
             }
