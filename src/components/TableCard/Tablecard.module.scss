@@ -1,0 +1,25 @@
+.cardContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .cadInformation {
+        height: 100%;
+        width: 99%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        max-height: 44px;
+        background-color: #D9D9D9;
+        color: #797979;
+        border-radius: 6px;
+        box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.42);
+         .pName {
+            margin-left: 20px;
+            width: 60%;
+         }
+         .pOthersInformations {
+            width: 14%;
+         }
+    }
+}
