@@ -28,6 +28,8 @@ Projeto para registro de prontuarios
 - [x] Header
 - [x] Sidebar
 - [x] MenuUsuario
+- [x] Table
+- [x] TableCards
 
 ### 🛠 Tecnologias
 
