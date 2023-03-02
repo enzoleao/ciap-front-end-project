@@ -82,6 +82,7 @@ export default function Login() {
                       placeholder="Email:"
                       type="email"
                       required
+                      autoComplete="true"
                     />
                   </div>
                   <div className={styles.inputsBox}>

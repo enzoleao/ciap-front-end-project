@@ -44,7 +44,7 @@ export default function Dashboard() {
                   case 'configuracoes':
                     return <Settings />
                   default:
-                    return null
+                    return 'home'
                 }
               })()}
             </div>
