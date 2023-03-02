@@ -5,7 +5,7 @@
     height: 72px;
     width: 100%;
     justify-content: space-between;
-        .sideBarButton{
+        .sideBarButton, .sideBarButtonActive{
             margin-left: 18px;
             background: none;
             border: none;
@@ -92,6 +92,4 @@
             visibility: visible;
             opacity: 1;
         }
-        
-        
 }

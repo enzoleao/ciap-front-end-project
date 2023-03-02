@@ -14,14 +14,14 @@ export default function Header() {
 
   return (
     <header className={styles.headerContainer}>
-      <button className={styles.sideBarButton} onClick={showSiderBar}>
+      <button className={styles.sideBarButtonActive} onClick={showSiderBar}>
         <GiHamburgerMenu color={'#E1E3EF'} className={styles.sideBarIcon} />
       </button>
       <div
         onClick={setVisibilityDropDownUser}
         className={styles.rightBoxHeader}
       >
-        <p>{user?.fullname}</p>
+        <p>{user?.fullname || user?.name}</p>
         <img src="https://github.com/enzoleao.png" alt="user-avatar" />
       </div>
       <nav

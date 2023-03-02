@@ -6,6 +6,7 @@ import Router from 'next/router'
 type User = {
   fullname: string
   email: string
+  name: string
 }
 
 type SignInData = {
