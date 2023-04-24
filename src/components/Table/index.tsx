@@ -16,24 +16,27 @@ export default function Table() {
   return (
     <div className={styles.tableContainer}>
       <div className={styles.tableSection}>
-        <header>
-          <p className={styles.pName}>NOME</p>
-          <p className={styles.othersP}>RG</p>
-          <p className={styles.othersP}>CPF</p>
-          <p className={styles.othersP}>NUMERO</p>
-        </header>
         <div className={styles.tableBody}>
-          {currentItens.map((item) => {
-            return (
-              <TableCard
-                key={item.id}
-                name={item.name}
-                rg={item.rg}
-                cpf={item.cpf}
-                number={item.phone}
-              />
-            )
-          })}
+          <table>
+            <thead>
+              <tr>
+                <th>Identificação</th>
+                <th>RG </th>
+                <th>CPF</th>
+                <th>Celular</th>
+              </tr>
+            </thead>
+            {currentItens.map((i) => {
+              return (
+                <tr key={i.id}>
+                  <td>{i.name}</td>
+                  <td>{i.rg}</td>
+                  <td>{i.cpf}</td>
+                  <td>{i.phone}</td>
+                </tr>
+              )
+            })}
+          </table>
         </div>
       </div>
       <div className={styles.footerPagination}>

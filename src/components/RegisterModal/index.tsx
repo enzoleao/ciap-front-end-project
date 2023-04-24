@@ -49,7 +49,7 @@ export function RegisterModal(props: RegisterModalProps) {
           </button>
         </section>
         <section className={styles.inputsSection}>
-          <div>
+          <div className={styles.inputsDiv}>
             <div className={styles.principalLabels}>Identificação</div>
             <div>
               <label htmlFor="">Nome</label>
@@ -80,7 +80,7 @@ export function RegisterModal(props: RegisterModalProps) {
               <input type="text" />
             </div>
           </div>
-          <div>
+          <div className={styles.inputsDiv}>
             <div className={styles.principalLabels}>Informações Militares</div>
             <div>
               <label htmlFor="">Nome de Guerra</label>
@@ -107,7 +107,7 @@ export function RegisterModal(props: RegisterModalProps) {
               <input type="text" />
             </div>
           </div>
-          <div>
+          <div className={styles.inputsDiv}>
             <div className={styles.principalLabels}>Endereço</div>
             <div>
               <label htmlFor="">CEP</label>
@@ -126,7 +126,7 @@ export function RegisterModal(props: RegisterModalProps) {
               <input type="text" />
             </div>
           </div>
-          <div>
+          <div className={styles.inputsDiv}>
             <div className={styles.principalLabels}>Contato</div>
             <div>
               <label htmlFor="">E-mail</label>
@@ -137,7 +137,7 @@ export function RegisterModal(props: RegisterModalProps) {
               </div>
             </div>
           </div>
-          <div>
+          <div className={styles.inputsDiv}>
             <div className={styles.principalLabels}>Registro Profissional</div>
             <div>
               <label htmlFor="">Conselho</label>
