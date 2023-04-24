@@ -28,6 +28,8 @@ type AuthContextType = {
   bodyUnshowDropDownMenu: () => void
   showDashboardCases: string
   setShowCasesDashboard: any
+  registerEmployeesModal: any
+  showEmployeesModal: any
 }
 
 export const AuthContext = createContext({} as AuthContextType)
@@ -38,7 +40,7 @@ export function AuthProvider({ children }: any) {
   const [showSideBar, setShowSideBar] = useState(false)
   const [visibilityUserDropDown, setVisibilityUserDropDown] = useState(false)
   const [showDashboardCases, setShowDashboardCases] = useState('home')
-
+  const [showEmployeesModal, setShowEmployeesModal] = useState(true)
   useEffect(() => {
     const { 'auth-token': token } = parseCookies()
     if (token) {
@@ -47,7 +49,7 @@ export function AuthProvider({ children }: any) {
         .then((res) => setUser(res.data))
         .catch(() => Router.push('/'))
     } else {
-      Router.push('/')
+      // Router.push('/')
     }
     setIsLoading(false)
   }, [])
@@ -84,9 +86,9 @@ export function AuthProvider({ children }: any) {
     setVisibilityUserDropDown(!visibilityUserDropDown)
 
   const bodyUnshowDropDownMenu = () => setVisibilityUserDropDown(false)
-
   const setShowCasesDashboard = (data: string) => setShowDashboardCases(data)
-
+  const registerEmployeesModal = () =>
+    setShowEmployeesModal(!showEmployeesModal)
   return (
     <AuthContext.Provider
       value={{
@@ -103,6 +105,8 @@ export function AuthProvider({ children }: any) {
         bodyUnshowDropDownMenu,
         showDashboardCases,
         setShowCasesDashboard,
+        registerEmployeesModal,
+        showEmployeesModal,
       }}
     >
       {children}

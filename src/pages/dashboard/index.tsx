@@ -55,7 +55,7 @@ export default function Dashboard() {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+/* export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { 'auth-token': token } = parseCookies(ctx)
   if (!token) {
     return {
@@ -69,3 +69,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     props: {},
   }
 }
+*/
