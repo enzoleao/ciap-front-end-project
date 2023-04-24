@@ -71,8 +71,10 @@
                     color: red;
                 }
             }
+            
             section {
                 width: 100%;
+
                 .principalLabels {
                     background-color:#44469F;
                     color: #FCFCFC;
@@ -86,7 +88,11 @@
                     border: 1px solid #797979;
                 }
             }
-            
+            .inputsSection {
+                display: flex;
+                flex-direction: column;
+                gap: 19px;
+            }
         }
 
 }

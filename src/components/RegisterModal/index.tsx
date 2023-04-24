@@ -2,11 +2,13 @@ import styles from './RegisterModal.module.scss'
 import { FaUser } from 'react-icons/fa'
 import { BsPrinter, BsTrash } from 'react-icons/bs'
 import { HiDocumentText } from 'react-icons/hi'
+import { useAuth } from '@/contexts/AuthContext'
 interface RegisterModalProps {
   RecordType: 'employees' | 'clients'
 }
 
 export function RegisterModal(props: RegisterModalProps) {
+  const { registerEmployeesModal } = useAuth()
   return (
     <div className={styles.RegisterModalContainer}>
       <header>
@@ -26,7 +28,7 @@ export function RegisterModal(props: RegisterModalProps) {
           <p>Princial</p>
         </section>
         <section>
-          <button>X</button>
+          <button onClick={registerEmployeesModal}>X</button>
           <button>PRONTUÁRIOS</button>
         </section>
       </header>
@@ -46,93 +48,103 @@ export function RegisterModal(props: RegisterModalProps) {
             <p>SALVAR</p>
           </button>
         </section>
-        <section>
-          <div className={styles.principalLabels}>Identificação</div>
+        <section className={styles.inputsSection}>
           <div>
-            <label htmlFor="">Nome</label>
-            <input type="text" />
-          </div>
-          <div>
-            <label htmlFor="">Dt. Nascimento</label>
-            <input type="text" />
-            <label htmlFor="">Estado civil</label>
-            <select name="" id="">
-              <option value="">Selecione</option>
-              <option value="">Solteiro</option>
-              <option value="">Casado</option>
-            </select>
-            <label htmlFor="">Número de filhos</label>
-            <input type="text" />
-          </div>
-          <div>
-            <label htmlFor="">CPF</label>
-            <input type="text" />
-            <label htmlFor="">Escolaridade</label>
-            <input type="text" />
-          </div>
-          <div>
-            <label htmlFor="">Sexo</label>
-            <input type="text" />
-            <label htmlFor="">Naturalidade</label>
-            <input type="text" />
-          </div>
-          <div className={styles.principalLabels}>Informações Militares</div>
-          <div>
-            <label htmlFor="">Nome de Guerra</label>
-            <input type="text" />
-            <label htmlFor="">RG Militar</label>
-            <input type="text" />
-          </div>
-          <div>
-            <label htmlFor="">Unidade</label>
-            <input type="text" />
-            <label htmlFor="">Posto/Gradução ou Categoria</label>
-            <input type="text" />
-          </div>
-          <div>
-            <label htmlFor="">Função Administrativa</label>
-            <input type="text" />
-            <label htmlFor="">Quadro</label>
-            <input type="text" />
-          </div>
-          <div>
-            <label htmlFor="">Situação Funcional</label>
-            <input type="text" />
-            <label htmlFor="">Data de inclusão</label>
-            <input type="text" />
-          </div>
-          <div className={styles.principalLabels}>Endereço</div>
-          <div>
-            <label htmlFor="">CEP</label>
-            <input type="text" />
-            <label htmlFor="">Número</label>
-            <input type="text" />
-          </div>
-          <div>
-            <label htmlFor="">Cidade</label>
-            <input type="text" />
-            <label htmlFor="">Bairro</label>
-            <input type="text" />
-          </div>
-          <div>
-            <label htmlFor="">Estado</label>
-            <input type="text" />
-          </div>
-          <div className={styles.principalLabels}>Contato</div>
-          <div>
-            <label htmlFor="">E-mail</label>
-            <input type="text" />
+            <div className={styles.principalLabels}>Identificação</div>
             <div>
-              <label htmlFor="">Celular</label>
+              <label htmlFor="">Nome</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label htmlFor="">Dt. Nascimento</label>
+              <input type="text" />
+              <label htmlFor="">Estado civil</label>
+              <select name="" id="">
+                <option value="">Selecione</option>
+                <option value="">Solteiro</option>
+                <option value="">Casado</option>
+              </select>
+              <label htmlFor="">Número de filhos</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label htmlFor="">CPF</label>
+              <input type="text" />
+              <label htmlFor="">Escolaridade</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label htmlFor="">Sexo</label>
+              <input type="text" />
+              <label htmlFor="">Naturalidade</label>
               <input type="text" />
             </div>
           </div>
-          <div className={styles.principalLabels}>Registro Profissional</div>
           <div>
-            <label htmlFor="">Conselho</label>
-            <input type="text" />
-            <label htmlFor="">Número</label>
-            <input type="text" />
+            <div className={styles.principalLabels}>Informações Militares</div>
+            <div>
+              <label htmlFor="">Nome de Guerra</label>
+              <input type="text" />
+              <label htmlFor="">RG Militar</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label htmlFor="">Unidade</label>
+              <input type="text" />
+              <label htmlFor="">Posto/Gradução ou Categoria</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label htmlFor="">Função Administrativa</label>
+              <input type="text" />
+              <label htmlFor="">Quadro</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label htmlFor="">Situação Funcional</label>
+              <input type="text" />
+              <label htmlFor="">Data de inclusão</label>
+              <input type="text" />
+            </div>
+          </div>
+          <div>
+            <div className={styles.principalLabels}>Endereço</div>
+            <div>
+              <label htmlFor="">CEP</label>
+              <input type="text" />
+              <label htmlFor="">Número</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label htmlFor="">Cidade</label>
+              <input type="text" />
+              <label htmlFor="">Bairro</label>
+              <input type="text" />
+            </div>
+            <div>
+              <label htmlFor="">Estado</label>
+              <input type="text" />
+            </div>
+          </div>
+          <div>
+            <div className={styles.principalLabels}>Contato</div>
+            <div>
+              <label htmlFor="">E-mail</label>
+              <input type="text" />
+              <div>
+                <label htmlFor="">Celular</label>
+                <input type="text" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className={styles.principalLabels}>Registro Profissional</div>
+            <div>
+              <label htmlFor="">Conselho</label>
+              <input type="text" />
+              <label htmlFor="">Número</label>
+              <input type="text" />
+            </div>
           </div>
         </section>
       </main>

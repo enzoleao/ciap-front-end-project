@@ -5,7 +5,7 @@ import { Users } from '../../services/userServices'
 import { useAuth } from '@/contexts/AuthContext'
 import { RegisterModal } from '../RegisterModal'
 export default function Employes() {
-  const { showEmployeesModal } = useAuth()
+  const { showEmployeesModal, registerEmployeesModal } = useAuth()
   return (
     <div className={styles.employesContainer}>
       {showEmployeesModal ? (
@@ -17,7 +17,7 @@ export default function Employes() {
               <RxMagnifyingGlass className={styles.searchInputIcon} />
               <input type="text" placeholder="Pesquisar..." />
             </div>
-            <button>NOVO FUNCIONÁRIO</button>
+            <button onClick={registerEmployeesModal}>NOVO FUNCIONÁRIO</button>
           </section>
           <section className={styles.secondSection}>
             <p className={styles.recentlySearchedHeader}>

@@ -40,7 +40,7 @@ export function AuthProvider({ children }: any) {
   const [showSideBar, setShowSideBar] = useState(false)
   const [visibilityUserDropDown, setVisibilityUserDropDown] = useState(false)
   const [showDashboardCases, setShowDashboardCases] = useState('home')
-  const [showEmployeesModal, setShowEmployeesModal] = useState(true)
+  const [showEmployeesModal, setShowEmployeesModal] = useState(false)
   useEffect(() => {
     const { 'auth-token': token } = parseCookies()
     if (token) {
