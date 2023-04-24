@@ -6,8 +6,8 @@ import Home from '@/components/Home'
 import Users from '@/components/Users'
 import Reports from '@/components/Reports'
 import Settings from '@/components/Settings'
-import { GetServerSideProps } from 'next'
-import { parseCookies } from 'nookies'
+// import { GetServerSideProps } from 'next'
+// import { parseCookies } from 'nookies'
 import { useAuth } from '@/contexts/AuthContext'
 export default function Dashboard() {
   const {

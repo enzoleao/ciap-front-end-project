@@ -1,5 +1,4 @@
 import styles from './Table.module.scss'
-import TableCard from '../TableCard'
 import { useState } from 'react'
 import { Users } from '../../services/userServices'
 
